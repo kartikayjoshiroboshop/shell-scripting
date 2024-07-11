@@ -36,25 +36,56 @@ echo -e "\e[34mHello In BLUE Color\e[0m"
 echo -e "\e[35mHello In MAGENTA Color\e[0m"
 echo -e "\e[36mHello In CYAN Color\e[0m"
 
-echo -e "\e[31mHello In Red Color\e[0m"
-echo -e "\e[32mHello In Green Color\e[0m"
-echo -e "\e[33mHello In YELLOW Color\e[0m"
-echo -e "\e[34mHello In BLUE Color\e[0m"
-echo -e "\e[35mHello In MAGENTA Color\e[0m"
-echo -e "\e[36mHello In CYAN Color\e[0m"
 
 
-echo -e "\e[31mHello In Red Color\e[0m"
-echo -e "\e[32mHello In Green Color\e[0m"
-echo -e "\e[33mHello In YELLOW Color\e[0m"
-echo -e "\e[34mHello In BLUE Color\e[0m"
-echo -e "\e[35mHello In MAGENTA Color\e[0m"
-echo -e "\e[36mHello In CYAN Color\e[0m"
 
-echo -e "\e[31mHello In Red Color\e[0m"
-echo -e "\e[32mHello In Green Color\e[0m"
-echo -e "\e[33mHello In YELLOW Color\e[0m"
-echo -e "\e[34mHello In BLUE Color\e[0m"
-echo -e "\e[35mHello In MAGENTA Color\e[0m"
-echo -e "\e[36mHello In CYAN Color\e[0m"
+
+echo -e "Default \e[39mDefault"
+
+
+echo -e "Default \e[30mBlack"
+
+
+echo -e "Default \e[31mRed"
+
+
+echo -e "Default \e[32mGreen"
+
+
+echo -e "Default \e[33mYellow"
+
+
+echo -e "Default \e[34mBlue"
+
+
+echo -e "Default \e[35mMagenta"
+
+
+echo -e "Default \e[36mCyan"
+
+
+echo -e "Default \e[37mLight gray"
+
+
+echo -e "Default \e[90mDark gray"
+
+
+echo -e "Default \e[91mLight red"
+
+
+echo -e "Default \e[92mLight green"
+
+
+echo -e "Default \e[93mLight yellow"
+
+
+echo -e "Default \e[94mLight blue"
+
+
+echo -e "Default \e[95mLight magenta"
+
+
+echo -e "Default \e[96mLight cyan"
+
+
 
