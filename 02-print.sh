@@ -1,91 +1,42 @@
 #!/bin/bash
 
-#Printing in shell can be done by using echo command
+# Printing in shell can be done by using echo command
 
-#Syntax : echo INPUT MESSAGE
+# Syntax : echo INPUT MESSAGE
 
 echo Hello
 echo Hello World
 
 ## Example from project
-
 echo Installing Nginx
-echo Starting Nginx serive
+echo Starting Nginx Service
 
-#We can print text in colors
-# syntax : echo -e "\e[ColmMESSAGE\e[0m"
+## We can print text in colors
+# Syntax : echo -e "\e[COLmMESSSAGE\e[0m"
 
-## -e To enable \e
-## \e - to enable color
-# COL- Color Code
-## m - end of syntax
-## 0 - to disable color
+## -e - TO enable \e
+## \e[ - To enable colors
+## COL - Color Code
+## m - End of syntax
+## 0 - TO disable color
+## All the above things should be quoted, either single or double quotes. But prefarably double quotes.
 
 ## Color Codes
-# RED 31
-# GREEN 32
-# YELLOW 33
-# BLUE 34
-# MAGENTA 35
-# CYAN 36
+# Red       31
+# Green     32
+# Yellow    33
+# Blue      34
+# Magenta   35
+# Cyan      36
+
 
 echo -e "\e[31mHello In Red Color\e[0m"
 echo -e "\e[32mHello In Green Color\e[0m"
-echo -e "\e[33mHello In YELLOW Color\e[0m"
-echo -e "\e[34mHello In BLUE Color\e[0m"
-echo -e "\e[35mHello In MAGENTA Color\e[0m"
-echo -e "\e[36mHello In CYAN Color\e[0m"
+echo -e "\e[33mHello In Yellow Color\e[0m"
+echo -e "\e[34mHello In Blue Color\e[0m"
+echo -e "\e[35mHello In Magenta Color\e[0m"
+echo -e "\e[36mHello In Cyan Color\e[0m"
 
+# Reference : https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
-
-
-
-echo -e "Default \e[39mDefault\e[0m"
-
-
-echo -e "Default \e[30mBlack\e[0m"
-
-
-echo -e "Default \e[31mRed\e[0m"
-
-
-echo -e "Default \e[32mGreen\e[0m"
-
-
-echo -e "Default \e[33mYellow\e[0m"
-
-
-echo -e "Default \e[34mBlue\e[0m"
-
-
-echo -e "Default \e[35mMagenta\e[0m"
-
-
-echo -e "Default \e[36mCyan\e[0m"
-
-
-echo -e "Default \e[37mLight gray\e[0m"
-
-
-echo -e "Default \e[90mDark gray\e[0m"
-
-
-echo -e "Default \e[91mLight red\e[0m"
-
-
-echo -e "Default \e[92mLight green\e[0m"
-
-
-echo -e "Default \e[93mLight yellow\e[0m"
-
-
-echo -e "Default \e[94mLight blue\e[0m"
-
-
-echo -e "Default \e[95mLight magenta\e[0m"
-
-
-echo -e "Default \e[96mLight cyan\e[0m"
-
-
-
+echo -e "\e[31mNormal Red\e[1;31mBold Red\e[0m"
