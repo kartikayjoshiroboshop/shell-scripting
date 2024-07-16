@@ -1,7 +1,7 @@
 #!/bin/bash
 
 username=raghu
-
+#read -p 'Enter Username:' username
 echo "ADDING USER -${username}"
 
 user add ${username}
