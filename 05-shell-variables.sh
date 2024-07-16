@@ -6,7 +6,7 @@ echo ${0}
 # $1 is the first input/argument
 echo ${1}
 
-# $2 is the second argument
+# $2 is the second input/ argument
 echo ${2}
 
 # $* & #@ to get all the inputs
