@@ -34,9 +34,11 @@
 ## systemctl restart nginx
 #```
 
+##Check whether the script is running as root user or not
 
+echo frontend setup
 
-yum install nginx -y
+#yum install nginx -y
 
 
 
