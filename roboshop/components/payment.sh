@@ -1,4 +1,4 @@
 #!/bin/bash
 
-
-echo payments setup
+source components/common.sh
+PYTHON payment

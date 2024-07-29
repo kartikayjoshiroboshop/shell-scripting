@@ -1,69 +1,26 @@
-## Frontend
-#
-#The frontend is the service in RobotShop to serve the web content over Nginx.
-#
-#To Install Nginx.
-#
-#```
-## yum install nginx -y
-## systemctl enable nginx
-## systemctl start nginx
-#```
-#
-#Let's download the HTML content that serves the RoboSHop Project UI and deploy under the Nginx path.
-#
-#```
-## curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-#```
-#
-#Deploy in Nginx Default Location.
-#
-#```
-## cd /usr/share/nginx/html
-## rm -rf *
-## unzip /tmp/frontend.zip
-## mv frontend-main/* .
-## mv static/* .
-## rm -rf frontend-master static README.md
-## mv localhost.conf /etc/nginx/default.d/roboshop.conf
-#```
-#
-#Finally restart the service once to effect the changes.
-#
-#```
-## systemctl restart nginx
-#```
+#!/bin/bash
 
-##Check whether the script is running as root user or not
+# source is nothing but import , like export command
+source components/common.sh
 
-echo Frontend setup
+yum install nginx -y &>>${LOG_FILE}
+STAT_CHECK $? "Nginx Installation"
 
-yum install nginx -y
-if [ $? -ne 0 ]; then
-  echo "Nginx install failed"
-  exit 1
-fi
+DOWNLOAD frontend
 
-curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-cd /usr/share/nginx/html
+rm -rf /usr/share/nginx/html/*
+STAT_CHECK $? "Remove old HTML Pages"
 
-if [ $? -ne 0 ]; then
-  echo "Download component failed"
-  exit 1
-fi
+cd  /tmp/frontend-main/static/ && cp -r * /usr/share/nginx/html/
+STAT_CHECK $? "Copying Frontend Content"
 
-rm -rf *
-unzip /tmp/frontend.zip
+cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
+STAT_CHECK $? "Copy Nginx Config File"
 
+for component in catalogue cart user shipping payment ; do
+  sed -i -e "/${component}/ s/localhost/${component}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+done
+STAT_CHECK $? "Update Nginx Config File"
 
- mv frontend-main/* .
- mv static/* .
-rm -rf frontend-master static README.md
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
-
-systemctl enable nginx
-
-systemctl start nginx
-
-
-
+systemctl enable nginx &>>${LOG_FILE} && systemctl restart nginx &>>${LOG_FILE}
+STAT_CHECK $? "Restart Nginx"

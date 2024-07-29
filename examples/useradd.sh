@@ -1,10 +1,10 @@
 #!/bin/bash
 
-username=raghu
-#read -p 'Enter Username:' username
-echo "ADDING USER -${username}"
+username=john
+# read -p 'Enter Username: ' username
+#username=$1
 
-user add ${username}
-echo password | passwd --stdin ${username}
-echo " Successfully added user- ${username}"
-
+echo "Adding User - ${username}"
+useradd ${username}
+echo password  | passwd --stdin ${username}
+echo "Successfully added User - ${username}"
